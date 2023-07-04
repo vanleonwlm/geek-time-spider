@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="referrer" content="no-referrer"/>
+  <title>{{ title }}</title>
+  <style>
+    body {
+      max-width: 768px;
+      min-width: 320px;
+      padding: 20px;
+      margin: auto;
+      font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overscroll-behavior: none;
+      letter-spacing: 0em;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="{{ cover }}">
+    <h1>{{ title }}</h1>
+    <p>{{ subtitle }}</p>
+    <time>{{ create_time }}</time> <author>{{ author.name }}</author> <span>{{ tags }}</span>
+    <p>{{ intro_html }}</p>
+  </header>
+  <div class="content">
+    {% if chapters.length > 0 %}
+    {% for chapter in chapters %}
+    <div class="chapter-article">
+        <div class="chapter">
+            {{ chapter.title }}
+        </div>
+        {% for article in articles %}
+        {% if article.chapter_id == chapter.id %}
+        <div class="article">
+            <a target="_blank" href="/articles/{{ article.id }}">{{ article.title }}</a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="chapter-article">
+      {% for article in articles %}
+      <div class="article">
+          <a target="_blank" href="/articles/{{ article.id }}">{{ article.title }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <footer></footer>
+</body>
+</html>

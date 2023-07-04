@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="referrer" content="no-referrer"/>
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <style>
+    body {
+      max-width: 768px;
+      min-width: 320px;
+      padding: 20px;
+      margin: auto;
+      font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overscroll-behavior: none;
+      letter-spacing: 0em;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    img {
+      max-width: 100%;
+      margin: auto;
+      display: block;
+    }
+    pre {
+      border: 1px solid #e6e8eb;
+      border-radius: 3px;
+      background: #f7f9fa;
+    }
+    p {
+      margin-bottom: 18px;
+    }
+    code {
+      text-wrap: wrap;
+    }
+    .content {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{ title}}</h1>
+    <time>{{ create_time }}</time>
+    <p>{{ intro }}</p>
+  </header>
+  <div class="content">
+    {{ content_html }}
+  </div>
+  <footer></footer>
+  <script>
+    hljs.highlightAll();
+  </script>
+</body>
+</html>

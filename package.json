@@ -1,0 +1,22 @@
+{
+  "name": "geek-time-spider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "spider": "node index.js",
+    "preview": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mysql": "^2.18.1",
+    "mysql-await": "^2.2.3",
+    "nunjucks": "^3.2.4",
+    "puppeteer": "^20.7.3",
+    "turndown": "^7.1.2",
+    "unirest": "^0.6.0"
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="referrer" content="no-referrer"/>
+  <title>极客时间</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <style>
+    body {
+      max-width: 768px;
+      min-width: 320px;
+      padding: 20px;
+      margin: auto;
+      font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overscroll-behavior: none;
+      letter-spacing: 0em;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    img {
+        width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  </header>
+  <div class="content">
+    {% for column in columns %}
+    <div class="column">
+        <h1><a target="_blank" href="/columns/{{ column.id }}">{{ column.title }}</a></h1>
+        <p>{{ column.subtitle }}</p>
+        <span>是否完结：{{ column.is_finish }}</span> <time>{{ column.create_time }}</time> <author>{{ column.author.name }}</author> <span>{{ column.tags }}</span>
+        <img src="{{ column.cover }}">
+    </div>
+    {% endfor %}
+  </div>
+  <footer></footer>
+</body>
+</html>
